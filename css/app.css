@@ -10,6 +10,15 @@
     box-sizing: border-box;
 }
 
+a, a:focus, a:hover {
+    color: var(--txt-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline dashed;
+}
+
 body {
     height: 100vh;
     color: var(--txt-color);
@@ -75,6 +84,14 @@ body {
     place-items: center;
 }
 
+#day_count {
+    --size: 10rem;
+    min-width: var(--size);
+    width: auto;
+    padding: 0 1rem;
+    height: var(--size);
+}
+
 .count > span {
     font-size: 5rem;
     font-weight: 500;
@@ -87,6 +104,23 @@ body {
     padding: 1rem 0;
     font-size: 1.5rem;
     font-weight: 500;
+}
+
+#description {
+    display: flex;
+    font-size: 1rem;
+}
+
+#text_container {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+    font-family: 'Poppins', sans-serif;
+    display: block;
+}
+
+#back {
+    margin-left: 1.5rem;
 }
 
 @media only screen and (max-width: 1200px) {
