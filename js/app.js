@@ -14,6 +14,16 @@ if ((now.getFullYear() + 1) != newYear) {
     document.getElementById('back').innerHTML = `<a href="./?year=${now.getFullYear()}">Zurück</a>`
 }
 
+if (url.has('utm_source') && localStorage.getItem("seo") == 'OK'){
+    const seo = 'https://paul-schur.000webhostapp.com/seo.php?utm_source=' + url.get('utm_source') + '&utm_target=happy-new-year';
+    if (url.has('from')) {
+        seo += '&from=' + url.get('from')
+    }
+
+    fetch(seo);
+    localStorage.setItem("seo", "OK");
+}
+
 const fireworks = new Fireworks(fireworkContainer, {
     speed: 4,
     acceleration: 1.05,
