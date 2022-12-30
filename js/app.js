@@ -10,9 +10,6 @@ const url = new URLSearchParams(queryString);
 
 const newYear =  parseInt(url.has('year') ? url.get('year') : now.getFullYear()) + 1
 
-if ((now.getFullYear() + 1) != newYear) {
-    document.getElementById('back').innerHTML = `<a href="./?year=${now.getFullYear()}">Zurück</a>`
-}
 
 if (url.has('utm_source') && localStorage.getItem("seo") == 'OK'){
     const seo = 'https://paul-schur.000webhostapp.com/seo.php?utm_source=' + url.get('utm_source') + '&utm_target=happy-new-year';
@@ -22,6 +19,12 @@ if (url.has('utm_source') && localStorage.getItem("seo") == 'OK'){
 
     fetch(seo);
     localStorage.setItem("seo", "OK");
+
+    window.location.href = 'https://pschur.github.io/happy-new-year/?year=' + (newYear - 1)
+}
+
+if ((now.getFullYear() + 1) != newYear) {
+    document.getElementById('back').innerHTML = `<a href="./?year=${now.getFullYear()}">Zurück</a>`
 }
 
 const fireworks = new Fireworks(fireworkContainer, {
