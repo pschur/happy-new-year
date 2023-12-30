@@ -66,6 +66,7 @@ const countdown = () => {
 
 function end(){
     fireworks.start()
+    document.getElementById('head-title').innerHTML = '<b>Willkommen im Jahr ...</b>'
     clearInterval(countdownInterval)
     
     daysSpan.innerHTML = 0
