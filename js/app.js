@@ -1,3 +1,5 @@
+const APP_URL = 'https://pschur.github.io/happy-new-year/';
+
 const fireworkContainer = document.querySelector('.fireworks-container')
 const daysSpan = document.querySelector('#days')
 const hoursSpan = document.querySelector('#hours')
@@ -70,16 +72,16 @@ function end(){
     hoursSpan.innerHTML = 0
     minutesSpan.innerHTML = 0
     secondsSpan.innerHTML = 0
-    // sec = 1800
-    sec = 10
+    sec = 1800 // 30min
+    //sec = 36000 // 1h
 
     const wait = setInterval(function(){
         sec--;
         
-        secondsSpan.innerHTML = sec
+        //secondsSpan.innerHTML = sec
         
         if (sec == 0){
-            window.location.href = window.location.href + '?year=' + newYear
+            window.location.href = APP_URL + '?year=' + newYear
         }
     }, 1000);
 }
