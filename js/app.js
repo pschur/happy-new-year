@@ -81,9 +81,13 @@ function end(){
         //secondsSpan.innerHTML = sec
         
         if (sec == 0){
-            window.location.href = APP_URL + '?year=' + newYear
+            next();
         }
     }, 1000);
+}
+
+function next(){
+    window.location.href = APP_URL + '?year=' + newYear
 }
 
 countdown()
