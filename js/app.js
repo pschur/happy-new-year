@@ -38,7 +38,7 @@ const fireworks = new Fireworks(fireworkContainer, {
     explosion: 10
 })
 
-const fireworks2 = new Fireworks.default(fireworkContainer)
+// const fireworks2 = new Fireworks.default(fireworkContainer)
 
 document.querySelector('#new-year').innerHTML = newYear
 
