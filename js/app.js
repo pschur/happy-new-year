@@ -38,7 +38,14 @@ const fireworks = new Fireworks(fireworkContainer, {
     explosion: 10
 })
 
-
+const fireworks2 = new Fireworks(fireworkContainer, {
+    speed: 4,
+    acceleration: 1.05,
+    friction: 1,
+    gravity: 4,
+    particles: 400,
+    explosion: 10
+})
 
 document.querySelector('#new-year').innerHTML = newYear
 
@@ -65,7 +72,8 @@ const countdown = () => {
 }
 
 function end(){
-    fireworks.start()
+    fireworks.start();
+    fireworks2.start();
     document.getElementById('head-title').innerHTML = '<b>Willkommen im Jahr ...</b>';
     clearInterval(countdownInterval)
     
