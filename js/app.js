@@ -15,40 +15,6 @@ const url = new URLSearchParams(queryString);
 const newYear =  parseInt(url.has('year') ? url.get('year') : now.getFullYear()) + 1
 
 
-// SEO
-if (localStorage.getItem("seo") !== true) {
-    localStorage.setItem('umami.disabled', 1);
-}
-
-if (localStorage.getItem('seo') === undefined) {
-    cookie_clicker.classList.remove('hidden');
-}
-
-
-if (url.has('utm_source') && localStorage.getItem("seo") != 'OK'){
-    // let seo = 'https://paul-schur.000webhostapp.com/seo.php?utm_source=' + url.get('utm_source') + '&utm_target=happy-new-year';
-    // if (url.has('from')) {
-    //     seo += '&from=' + url.get('from')
-    // }
-
-    // fetch(seo);
-    // localStorage.setItem("seo", "OK");
-
-    window.location.href = 'https://pschur.github.io/happy-new-year/?year=' + (newYear - 1)
-}
-
-function cookies(accept) {
-    if (accept) {
-        localStorage.setItem('seo', true);
-        localStorage.removeItem('umami.disabled');
-    } else {
-        localStorage.setItem('seo', false);
-        localStorage.setItem('umami.disabled', 1);
-    }
-
-    cookie_clicker.classList.add('hidden')
-}
-
 // COUNT DOWN
 
 if ((now.getFullYear() + 1) != newYear) {
