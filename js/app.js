@@ -1,5 +1,7 @@
 const APP_URL = 'https://pschur.github.io/happy-new-year/';
 
+const cookie_clicker = document.getElementById('cookie');
+
 const fireworkContainer = document.querySelector('.fireworks-container')
 const daysSpan = document.querySelector('#days')
 const hoursSpan = document.querySelector('#hours')
@@ -12,8 +14,14 @@ const url = new URLSearchParams(queryString);
 
 const newYear =  parseInt(url.has('year') ? url.get('year') : now.getFullYear()) + 1
 
+
+// SEO
 if (localStorage.getItem("seo") !== true) {
     localStorage.setItem('umami.disabled', 1);
+}
+
+if (localStorage.getItem('seo') === undefined) {
+    cookie_clicker.classList.remove('hidden');
 }
 
 
@@ -28,6 +36,20 @@ if (url.has('utm_source') && localStorage.getItem("seo") != 'OK'){
 
     window.location.href = 'https://pschur.github.io/happy-new-year/?year=' + (newYear - 1)
 }
+
+function cookies(accept) {
+    if (accept) {
+        localStorage.setItem('seo', true);
+        localStorage.removeItem('umami.disabled');
+    } else {
+        localStorage.setItem('seo', false);
+        localStorage.setItem('umami.disabled', 1);
+    }
+
+    cookie_clicker.classList.add('hidden')
+}
+
+// COUNT DOWN
 
 if ((now.getFullYear() + 1) != newYear) {
     document.getElementById('back').innerHTML = `<a href="./?year=${now.getFullYear()}">Zurück</a>`
