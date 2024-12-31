@@ -38,7 +38,7 @@ jobs:
       - name: Install Node Dependencies
         run: npm install
       - name: Build Css Files
-        run: npm run render
+        run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
