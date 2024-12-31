@@ -3,10 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-    .count {
-        font-size: 200;
-    }
-    
     .wrapper {
         justify-content: center;
         align-items: center;
@@ -14,5 +10,19 @@
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+    }
+}
+
+@layer components {
+    .count-container {
+        @apply max-w-sm bg-neutral-900 rounded-lg shadow-sm lg:w-40 lg:min-h-40;
+    }
+
+    .count-description {
+        @apply relative font-semibold top-0 left-0 right-0 text-center text-base sm:text-xl w-full overflow-hidden rounded-t-lg bg-neutral-700 text-neutral-100 p-2;
+    }
+
+    .count-number {
+        @apply text-white font-bold text-2xl sm:text-6xl lg:text-8xl leading-none tracking-tight p-7;
     }
 }

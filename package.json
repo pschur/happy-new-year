@@ -5,6 +5,7 @@
     "tailwindcss": "^3.4.17"
   },
   "scripts": {
+    "dev": "tailwindcss --input css/main.css --output build/app.css -w",
     "build": "tailwindcss --input css/main.css --output build/app.css -m"
   },
   "dependencies": {
