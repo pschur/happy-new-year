@@ -31,6 +31,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Setup NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install Node Dependencies
+        run: npm install
+      - name: Build Css Files
+        run: npm run render
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
