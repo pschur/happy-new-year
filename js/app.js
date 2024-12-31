@@ -40,7 +40,7 @@ if (url.has('utm_source') && localStorage.getItem("seo") != 'OK'){
 function cookies(accept) {
     if (accept) {
         localStorage.setItem('seo', true);
-        localStorage.setItem('umami.disabled', 0);
+        localStorage.removeItem('umami.disabled');
     } else {
         localStorage.setItem('seo', false);
         localStorage.setItem('umami.disabled', 1);
