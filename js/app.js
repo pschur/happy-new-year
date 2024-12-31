@@ -12,15 +12,19 @@ const url = new URLSearchParams(queryString);
 
 const newYear =  parseInt(url.has('year') ? url.get('year') : now.getFullYear()) + 1
 
+if (localStorage.getItem("seo") !== true) {
+    localStorage.setItem('umami.disabled', 1);
+}
+
 
 if (url.has('utm_source') && localStorage.getItem("seo") != 'OK'){
-    let seo = 'https://paul-schur.000webhostapp.com/seo.php?utm_source=' + url.get('utm_source') + '&utm_target=happy-new-year';
-    if (url.has('from')) {
-        seo += '&from=' + url.get('from')
-    }
+    // let seo = 'https://paul-schur.000webhostapp.com/seo.php?utm_source=' + url.get('utm_source') + '&utm_target=happy-new-year';
+    // if (url.has('from')) {
+    //     seo += '&from=' + url.get('from')
+    // }
 
-    fetch(seo);
-    localStorage.setItem("seo", "OK");
+    // fetch(seo);
+    // localStorage.setItem("seo", "OK");
 
     window.location.href = 'https://pschur.github.io/happy-new-year/?year=' + (newYear - 1)
 }

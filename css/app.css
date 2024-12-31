@@ -38,9 +38,9 @@ body {
     width: 100%;
     height: 100%;
     background-position: bottom center;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-image: url(../img/2023-12-31.jpg);
+    background-image: url(../img/2024-12-31.jpeg);
 }
 
 .content-wrapper {
@@ -120,6 +120,16 @@ body {
 #text_container {
     position: sticky;
     top: 0;
+    z-index: 1020;
+    font-family: 'Poppins', sans-serif;
+    display: block;
+}
+
+#cookie_container{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
     z-index: 1020;
     font-family: 'Poppins', sans-serif;
     display: block;
